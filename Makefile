@@ -5,7 +5,7 @@
 ## Login   <brugue_m@epitech.net>
 ## 
 ## Started on  Mon Feb  9 12:53:02 2015 bruguet Maxime
-## Last update Sat Feb 14 16:26:13 2015 bruguet Maxime
+## Last update Tue Feb 17 23:28:04 2015 bruguet Maxime
 ##
 
 NAME	= allum1
@@ -30,7 +30,9 @@ SRC	= src/main.c \
 	src/count_pipe.c \
 	src/init_all.c \
 	src/play_com.c \
-	src/check_real.c
+	src/check_real.c \
+	src/fort_boyard.c \
+	src/check_win_boy.c
 
 OBJ	= $(SRC:.c=.o)
 

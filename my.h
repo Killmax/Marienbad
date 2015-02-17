@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:27:06 2015 bruguet Maxime
-** Last update Tue Feb 17 19:04:42 2015 bruguet Maxime
+** Last update Tue Feb 17 23:18:34 2015 bruguet Maxime
 */
 
 #ifndef MY_H_
@@ -87,6 +87,9 @@ t_list		*delete_alum(int, int, t_list *);
 int		nb_player(int);
 void		check_real(t_real *);
 int		check_cont_line(t_real *);
+void		fort_boyard(void);
+char		*create_boyard(void);
+void		check_real_boyard(t_boyard *all);
 
 /*
 ** LINKED LIST

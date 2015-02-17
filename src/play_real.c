@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Feb 10 17:15:34 2015 bruguet Maxime
-** Last update Tue Feb 17 18:32:07 2015 bruguet Maxime
+** Last update Tue Feb 17 23:26:49 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -78,7 +78,7 @@ int		check_win(t_list *list, int cpt)
     }
   printf("Le joueur %d a gagné !\n", nb_player(cpt));
   exit(0);
-  return (0);
+  return (TRUE);
 }
 
 void		play_real(t_list *list)
