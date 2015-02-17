@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:27:06 2015 bruguet Maxime
-** Last update Tue Feb 17 13:37:13 2015 bruguet Maxime
+** Last update Tue Feb 17 19:04:42 2015 bruguet Maxime
 */
 
 #ifndef MY_H_
@@ -41,6 +41,16 @@ typedef struct	s_real
   char		*nbr;
   int		*nbr_alum;
 }		t_real;
+
+typedef struct	s_boyard
+{
+  char		is_win;
+  int		nb_alum;
+  int		nbr_alum;
+  int		cpt;
+  char		*line;
+  char		*nbr;
+}		t_boyard;
 
 /*
 ** MY
