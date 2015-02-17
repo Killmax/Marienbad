@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Feb 10 17:15:34 2015 bruguet Maxime
-** Last update Thu Feb 12 16:37:55 2015 bruguet Maxime
+** Last update Tue Feb 17 13:21:59 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -85,23 +85,16 @@ void		play_real(t_list *list)
 {
   t_real		*all;
 
+  all = NULL;
   all = init_all(all, list);
   show_list(list);
   while (all->is_win == FALSE)
     {
       printf("Joueur %d :\n", nb_player(all->cpt++));
       my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
-      while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
-	my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
-      while ((all->nb_line = atoi(all->nbr)) > NB_LINE || (all->nb_line = atoi(all->nbr)) <= 0)
-	{
-	  my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
-	  all->nbr = get_next_line(0);
-	}
-      my_putstr("Combien d'alummette?\n");
-      while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
-	my_putstr("Combien d'alummette?\n");
-      while (check_nbr_alum(all->nbr_alum, all->nb_line, (all->nb_alum = atoi(all->nbr))) == 1)
+      check_real(all);
+      while (check_nbr_alum(all->nbr_alum, all->nb_line,
+			    (all->nb_alum = atoi(all->nbr))) == 1)
 	{
 	  my_putstr("Combien d'alummette?\n");
 	  all->nb_alum = atoi((all->nbr = get_next_line(0)));

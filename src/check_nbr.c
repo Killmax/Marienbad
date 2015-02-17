@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Wed Feb 11 13:55:09 2015 bruguet Maxime
-** Last update Thu Feb 12 15:05:11 2015 bruguet Maxime
+** Last update Tue Feb 17 12:17:37 2015 bruguet Maxime
 */
 
 #include "my.h"
@@ -24,5 +24,15 @@ int		check_nbr_alum(int *nbr, int line, int nb_alum)
 {
   if (nbr[line - 1] < nb_alum)
     return (1);
+  return (0);
+}
+
+int		check_cont_line(t_real *all)
+{
+  if (all->nbr_alum[all->nb_line - 1 ] == 0)
+    {
+      my_putstr("La ligne est vide...\n");
+      return (1);
+    }
   return (0);
 }

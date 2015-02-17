@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Jan 20 13:48:08 2015 bruguet Maxime
-** Last update Mon Feb  9 11:24:28 2015 bruguet Maxime
+** Last update Tue Feb 17 12:11:56 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -71,52 +71,4 @@ void		free_list(t_list **list)
     }
   free(*list);
   *list = NULL;
-}
-
-t_list		*end_or_beg(t_list *list, t_node *tmp)
-{
-  if (tmp->next == NULL)
-    {
-      list->tail = tmp->next;
-      list->tail->next = NULL;
-    }
-  else if (tmp->prev == NULL)
-    {
-      list->head = tmp->next;
-      if (list->head != NULL)
-	list->head->prev = NULL;
-    }
-  return (list);
-}
-
-t_node		*middle(t_node *tmp)
-{
-  tmp->next->prev = tmp->prev;
-  tmp->prev->next = tmp->next;
-  return (tmp);
-}
-
-t_list		*delete_pos(t_list *list, int pos)
-{
-  t_node	*tmp;
-  int		i;
-
-  i = 1;
-  tmp = list->head;
-  while (tmp != NULL && i <= pos)
-    {
-      if (pos == i)
-	{
-	  if (tmp->next == NULL || tmp->prev == NULL)
-	    list = end_or_beg(list, tmp);
-	  else if (tmp->next != NULL && tmp->prev != NULL)
-	    tmp = middle(tmp);
-	  free(tmp);
-	  list->length--;
-	}
-      else
-	tmp = tmp->next;
-      i++;
-    }
-  return (list);
 }

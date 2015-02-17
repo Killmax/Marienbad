@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:27:06 2015 bruguet Maxime
-** Last update Thu Feb 12 16:03:41 2015 bruguet Maxime
+** Last update Tue Feb 17 13:37:13 2015 bruguet Maxime
 */
 
 #ifndef MY_H_
@@ -72,6 +72,11 @@ int		*stock_nbr(t_list *);
 int		check_nbr(char *);
 int		check_nbr_alum(int *, int, int);
 t_real		*init_all(t_real *, t_list *);
+void		play_com(t_list *);
+t_list		*delete_alum(int, int, t_list *);
+int		nb_player(int);
+void		check_real(t_real *);
+int		check_cont_line(t_real *);
 
 /*
 ** LINKED LIST
@@ -79,11 +84,8 @@ t_real		*init_all(t_real *, t_list *);
 
 t_list		*create_list(void);
 t_list		*put_in_list(t_list *, char*);
-t_list		*delete_pos(t_list *, int);
 void		free_list(t_list **);
 void		show_list(t_list *);
-t_list		*end_or_beg(t_list *, t_node *);
-t_node		*middle(t_node *);
 
 /*
 ** ERROR
