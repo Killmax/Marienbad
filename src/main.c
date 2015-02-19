@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:13:48 2015 bruguet Maxime
-** Last update Thu Feb 12 15:28:22 2015 bruguet Maxime
+** Last update Thu Feb 19 14:51:53 2015 bruguet Maxime
 */
 
 #include <ncurses/curses.h>
@@ -40,7 +40,7 @@ int		main(int ac, char **av)
   if (tgetent(NULL, "xterm") == -1)
     my_error("ERROR : tgetent failure\n");
   clear_term();
-  show_list(list);
+  ascii_art();
   play(list);
   (void)av;
   return (0);

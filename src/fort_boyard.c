@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Feb 17 16:55:04 2015 bruguet Maxime
-** Last update Tue Feb 17 23:57:00 2015 bruguet Maxime
+** Last update Thu Feb 19 15:07:51 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -58,18 +58,15 @@ int		check_nbr_boyard(t_boyard *all)
 
 t_boyard	*delete_boyard(t_boyard *all)
 {
-  int		num_alum;
   int		i;
 
-  num_alum = atoi(all->nbr) - 1;
-  i = num_alum;
-  while (i < num_alum + all->nb_alum + 1)
+  i = all->num_alum - 1;
+  while (i < all->num_alum - 1 + all->nb_alum)
     {
       if (i < my_strlen(all->line))
 	all->line[i] = '.';
       i++;
     }
-  all->nbr_alum -= all->nb_alum;
   return (all);
 }
 
@@ -80,6 +77,8 @@ void		fort_boyard(void)
   all = NULL;
   all = init_boyard(all);
   clear_term();
+  ascii_boyard();
+  my_putstr("Maître des ténèbres, je demande le jeu !\n");
   put_line(all->line);
   while (all->is_win == FALSE)
     {
@@ -94,6 +93,7 @@ void		fort_boyard(void)
       my_putchar('\n');
       all  = delete_boyard(all);
       clear_term();
+      ascii_boyard();
       put_line(all->line);
       all->is_win = check_win_boyard(all);
     }

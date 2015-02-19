@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Jan 20 15:52:15 2015 bruguet Maxime
-** Last update Sat Feb 14 14:43:36 2015 bruguet Maxime
+** Last update Thu Feb 19 14:57:11 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -30,7 +30,7 @@ void		show_list(t_list *list)
 
   if (list != NULL)
     {
-      clear_term();
+      ascii_art();
       nb = 1;
       tmp = list->head;
       while (tmp != NULL)

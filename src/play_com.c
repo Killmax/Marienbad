@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Wed Feb 11 18:26:39 2015 bruguet Maxime
-** Last update Tue Feb 17 13:20:35 2015 bruguet Maxime
+** Last update Thu Feb 19 15:11:53 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -77,6 +77,7 @@ void		play_com(t_list *list)
 
   all = NULL;
   all = init_all(all, list);
+  clear_term();
   show_list(list);
   while (all->is_win == FALSE)
     {
@@ -87,6 +88,7 @@ void		play_com(t_list *list)
       all->cpt++;
       list = delete_alum(all->nb_alum, all->nb_line, list);
       all->nbr_alum = stock_nbr(list);
+      clear_term();
       show_list(list);
       my_putstr("L'ordi est en train de jouer...\n");
       my_putstr("L'ordi a enlevé de manière hasardeuse ");

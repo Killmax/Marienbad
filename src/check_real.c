@@ -5,28 +5,22 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Sat Feb 14 16:22:01 2015 bruguet Maxime
-** Last update Tue Feb 17 23:51:15 2015 bruguet Maxime
+** Last update Wed Feb 18 16:32:36 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
 #include "my.h"
 
-void		check_all(t_boyard *all)
-{
-  while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
-    my_putstr("A partir de quelle allumette voulez-vous en enlever ?\n");
-}
-
 void		check_real_boyard(t_boyard *all)
 {
   while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
     my_putstr("A partir de quelle allumette voulez-vous en enlever ?\n");
-  while (all->line[atoi(all->nbr) - 1] == '.')
+  while (all->line[(all->num_alum = atoi(all ->nbr))] == '.')
     {
       my_putstr("Position déjà vide\n");
       my_putstr("A partir de quelle allumette voulez-vous en enlever ?\n");
-      all->nbr = get_next_line(0);
-      check_all(all);
+      while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
+	my_putstr("A partir de quelle allumette voulez-vous en enlever ?\n");
     }
   my_putstr("Combien d'alummette?\n");
   while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)

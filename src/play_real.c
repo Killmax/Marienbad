@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Feb 10 17:15:34 2015 bruguet Maxime
-** Last update Tue Feb 17 23:26:49 2015 bruguet Maxime
+** Last update Thu Feb 19 14:57:13 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -87,6 +87,7 @@ void		play_real(t_list *list)
 
   all = NULL;
   all = init_all(all, list);
+  clear_term();
   show_list(list);
   while (all->is_win == FALSE)
     {
@@ -102,6 +103,7 @@ void		play_real(t_list *list)
       my_putchar('\n');
       list = delete_alum(all->nb_alum, all->nb_line, list);
       all->nbr_alum = stock_nbr(list);
+      clear_term();
       show_list(list);
       all->is_win = check_win(list, all->cpt);
     }

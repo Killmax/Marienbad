@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:27:06 2015 bruguet Maxime
-** Last update Tue Feb 17 23:18:34 2015 bruguet Maxime
+** Last update Thu Feb 19 15:11:02 2015 bruguet Maxime
 */
 
 #ifndef MY_H_
@@ -46,6 +46,7 @@ typedef struct	s_boyard
 {
   char		is_win;
   int		nb_alum;
+  int		num_alum;
   int		nbr_alum;
   int		cpt;
   char		*line;
@@ -89,7 +90,11 @@ void		check_real(t_real *);
 int		check_cont_line(t_real *);
 void		fort_boyard(void);
 char		*create_boyard(void);
-void		check_real_boyard(t_boyard *all);
+void		check_real_boyard(t_boyard *);
+t_boyard	*init_boyard(t_boyard *);
+int		check_win_boyard(t_boyard *);
+void		ascii_art(void);
+void		ascii_boyard(void);
 
 /*
 ** LINKED LIST
