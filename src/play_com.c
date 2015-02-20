@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Wed Feb 11 18:26:39 2015 bruguet Maxime
-** Last update Thu Feb 19 15:11:53 2015 bruguet Maxime
+** Last update Fri Feb 20 15:34:21 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -55,9 +55,12 @@ int		check_win_com(t_list *list, int cpt)
       tmp = tmp->next;
     }
   if (cpt % 2 == 1)
-    my_putstr("L'humain a gagné !\n");
+    {
+      ascii_win();
+      my_putstr("L'humain a gagné !\n");
+    }
   else
-    my_putstr("L'ordi a gagné !\n");
+    ascii_noob();
   exit(0);
   return (0);
 }

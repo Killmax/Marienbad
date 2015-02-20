@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Sat Feb 14 16:22:01 2015 bruguet Maxime
-** Last update Wed Feb 18 16:32:36 2015 bruguet Maxime
+** Last update Fri Feb 20 14:56:07 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -15,7 +15,7 @@ void		check_real_boyard(t_boyard *all)
 {
   while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
     my_putstr("A partir de quelle allumette voulez-vous en enlever ?\n");
-  while (all->line[(all->num_alum = atoi(all ->nbr))] == '.')
+  while (all->line[(all->num_alum = atoi(all ->nbr)) - 1] == '.')
     {
       my_putstr("Position déjà vide\n");
       my_putstr("A partir de quelle allumette voulez-vous en enlever ?\n");

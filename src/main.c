@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:13:48 2015 bruguet Maxime
-** Last update Thu Feb 19 14:51:53 2015 bruguet Maxime
+** Last update Fri Feb 20 15:37:36 2015 bruguet Maxime
 */
 
 #include <ncurses/curses.h>

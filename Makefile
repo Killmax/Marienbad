@@ -5,7 +5,7 @@
 ## Login   <brugue_m@epitech.net>
 ## 
 ## Started on  Mon Feb  9 12:53:02 2015 bruguet Maxime
-## Last update Thu Feb 19 14:31:09 2015 bruguet Maxime
+## Last update Fri Feb 20 15:51:56 2015 bruguet Maxime
 ##
 
 NAME	= allum1
@@ -42,7 +42,6 @@ RM	= rm -f
 CC	= gcc
 
 CFLAGS	+= -I. -Wall -Wextra -lncurses
-CFLAGS	+= -g
 
 all:	$(NAME)
 

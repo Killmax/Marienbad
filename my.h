@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:27:06 2015 bruguet Maxime
-** Last update Thu Feb 19 15:11:02 2015 bruguet Maxime
+** Last update Fri Feb 20 15:51:27 2015 bruguet Maxime
 */
 
 #ifndef MY_H_
@@ -95,6 +95,8 @@ t_boyard	*init_boyard(t_boyard *);
 int		check_win_boyard(t_boyard *);
 void		ascii_art(void);
 void		ascii_boyard(void);
+void		ascii_noob(void);
+void		ascii_win(void);
 
 /*
 ** LINKED LIST
