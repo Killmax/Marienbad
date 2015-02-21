@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Thu Feb 12 15:44:51 2015 bruguet Maxime
-** Last update Tue Feb 17 19:04:02 2015 bruguet Maxime
+** Last update Sat Feb 21 17:14:02 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -22,11 +22,11 @@ t_boyard	*init_boyard(t_boyard *all)
   return (all);
 }
 
-t_real		*init_all(t_real *all, t_list *list)
+t_real		*init_all(t_real *all, t_list *list, int nb_line)
 {
   if ((all = malloc(sizeof(t_real *))) == NULL)
       my_error(MALLOC_FAIL);
-  all->nbr_alum = stock_nbr(list);
+  all->nbr_alum = stock_nbr(list, nb_line);
   all->is_win = FALSE;
   all->cpt = 0;
   return (all);

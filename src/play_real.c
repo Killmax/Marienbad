@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Feb 10 17:15:34 2015 bruguet Maxime
-** Last update Fri Feb 20 15:08:55 2015 bruguet Maxime
+** Last update Sat Feb 21 17:21:42 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -82,19 +82,19 @@ int		check_win(t_list *list, int cpt)
   return (TRUE);
 }
 
-void		play_real(t_list *list)
+void		play_real(t_list *list, int nb_line)
 {
   t_real		*all;
 
   all = NULL;
-  all = init_all(all, list);
+  all = init_all(all, list, nb_line);
   clear_term();
-  show_list(list);
+  show_list(list, nb_line);
   while (all->is_win == FALSE)
     {
       printf("Joueur %d :\n", nb_player(all->cpt++));
       my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
-      check_real(all);
+      check_real(all, nb_line);
       while (check_nbr_alum(all->nbr_alum, all->nb_line,
 			    (all->nb_alum = atoi(all->nbr))) == 1)
 	{
@@ -103,9 +103,9 @@ void		play_real(t_list *list)
 	}
       my_putchar('\n');
       list = delete_alum(all->nb_alum, all->nb_line, list);
-      all->nbr_alum = stock_nbr(list);
+      all->nbr_alum = stock_nbr(list, nb_line);
       clear_term();
-      show_list(list);
+      show_list(list, nb_line);
       all->is_win = check_win(list, all->cpt);
     }
 }

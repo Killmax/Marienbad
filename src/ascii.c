@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Thu Feb 19 14:19:13 2015 bruguet Maxime
-** Last update Fri Feb 20 15:49:49 2015 bruguet Maxime
+** Last update Sat Feb 21 17:29:30 2015 bruguet Maxime
 */
 
 #include "my.h"
@@ -37,7 +37,7 @@ void		ascii_boyard(void)
 void		ascii_win(void)
 {
   my_putstr("   ____      ____         \n");
-  my_putstr("U /\\\"__|u U /\\\"__| u  \n");
+  my_putstr("U /____|u U /____| u  \n");
   my_putstr("\\| |  _ / \\| |  _ /     \n");
   my_putstr(" | |_| |   | |_| |       \n");
   my_putstr("  \\____|    \\____|    \n");

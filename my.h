@@ -5,13 +5,13 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 11:27:06 2015 bruguet Maxime
-** Last update Fri Feb 20 15:51:27 2015 bruguet Maxime
+** Last update Sat Feb 21 17:21:00 2015 bruguet Maxime
 */
 
 #ifndef MY_H_
 # define MY_H_
 
-# define NB_LINE 5
+# define NB_LINE 9
 # define BUFF_SIZE 4096
 # define TRUE 1
 # define FALSE 0
@@ -75,18 +75,18 @@ int		my_str_isnum(char *);
 */
 
 char		*stock_line(void);
-void		play(t_list *);
-int		calc_space(int);
-void		play_real(t_list *);
+void		play(t_list *, int);
+int		calc_space(int, int);
+void		play_real(t_list *, int);
 int		count_pipe(char *);
-int		*stock_nbr(t_list *);
+int		*stock_nbr(t_list *, int);
 int		check_nbr(char *);
 int		check_nbr_alum(int *, int, int);
-t_real		*init_all(t_real *, t_list *);
-void		play_com(t_list *);
+t_real		*init_all(t_real *, t_list *, int);
+void		play_com(t_list *, int);
 t_list		*delete_alum(int, int, t_list *);
 int		nb_player(int);
-void		check_real(t_real *);
+void		check_real(t_real *, int);
 int		check_cont_line(t_real *);
 void		fort_boyard(void);
 char		*create_boyard(void);
@@ -105,7 +105,7 @@ void		ascii_win(void);
 t_list		*create_list(void);
 t_list		*put_in_list(t_list *, char*);
 void		free_list(t_list **);
-void		show_list(t_list *);
+void		show_list(t_list *, int);
 
 /*
 ** ERROR

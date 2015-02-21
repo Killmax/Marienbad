@@ -5,20 +5,20 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Wed Feb 11 18:26:39 2015 bruguet Maxime
-** Last update Fri Feb 20 15:34:21 2015 bruguet Maxime
+** Last update Sat Feb 21 17:20:25 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "my.h"
 
-void		player(t_real *all)
+void		player(t_real *all, int nb_line)
 {
   printf("A l'humain de jouer :\n");
   my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
   while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
     my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
-  while ((all->nb_line = atoi(all->nbr)) > NB_LINE || check_cont_line(all) == 1
+  while ((all->nb_line = atoi(all->nbr)) > nb_line || check_cont_line(all) == 1
 	 || (all->nb_line = atoi(all->nbr)) <= 0)
     {
       my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
@@ -65,34 +65,34 @@ int		check_win_com(t_list *list, int cpt)
   return (0);
 }
 
-void		computer(t_real *all)
+void		computer(t_real *all, int nb_line)
 {
-  all->nb_line = rand() % NB_LINE + 1;
+  all->nb_line = rand() % nb_line + 1;
   while (all->nbr_alum[all->nb_line - 1] == 0)
-    all->nb_line = rand() % NB_LINE + 1;
+    all->nb_line = rand() % nb_line + 1;
   all->nb_alum = rand() % (all->nbr_alum[all->nb_line - 1]) + 1;
   my_putchar('\n');
 }
 
-void		play_com(t_list *list)
+void		play_com(t_list *list, int nb_line)
 {
   t_real		*all;
 
   all = NULL;
-  all = init_all(all, list);
+  all = init_all(all, list, nb_line);
   clear_term();
-  show_list(list);
+  show_list(list, nb_line);
   while (all->is_win == FALSE)
     {
       if (nb_player(all->cpt) == 2)
-	player(all);
+	player(all, nb_line);
       else
-	computer(all);
+	computer(all, nb_line);
       all->cpt++;
       list = delete_alum(all->nb_alum, all->nb_line, list);
-      all->nbr_alum = stock_nbr(list);
+      all->nbr_alum = stock_nbr(list, nb_line);
       clear_term();
-      show_list(list);
+      show_list(list, nb_line);
       my_putstr("L'ordi est en train de jouer...\n");
       my_putstr("L'ordi a enlevé de manière hasardeuse ");
       printf("%d allumettes à la %de ligne\n", all->nb_alum, all->nb_line);

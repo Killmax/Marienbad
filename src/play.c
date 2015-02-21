@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb  9 17:14:27 2015 bruguet Maxime
-** Last update Fri Feb 20 15:50:29 2015 bruguet Maxime
+** Last update Sat Feb 21 16:50:40 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -27,7 +27,7 @@ int		is_correct(char *choice)
     return (1);
 }
 
-void		play(t_list *list)
+void		play(t_list *list, int nb)
 {
   char		*choice;
 
@@ -40,9 +40,9 @@ void		play(t_list *list)
   while (is_correct(choice) == 1)
     choice = get_next_line(0);
   if (my_strncmp(choice, "1", 1) == 0)
-    play_com(list);
+    play_com(list, nb);
   else if (my_strncmp(choice, "2", 1) == 0)
-    play_real(list);
+    play_real(list, nb);
   else if (my_strncmp(choice, "3", 1) == 0)
     fort_boyard();
 }

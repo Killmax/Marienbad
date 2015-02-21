@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Sat Feb 14 16:22:01 2015 bruguet Maxime
-** Last update Fri Feb 20 14:56:07 2015 bruguet Maxime
+** Last update Sat Feb 21 16:50:17 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -27,11 +27,11 @@ void		check_real_boyard(t_boyard *all)
     my_putstr("Combien d'alummette?\n");
 }
 
-void		check_real(t_real *all)
+void		check_real(t_real *all, int nb_line)
 {
   while ((all->nbr = get_next_line(0)) == NULL || check_nbr(all->nbr) == 1)
     my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
-  while ((all->nb_line = atoi(all->nbr)) > NB_LINE || check_cont_line(all) == 1
+  while ((all->nb_line = atoi(all->nbr)) > nb_line || check_cont_line(all) == 1
 	 || (all->nb_line = atoi(all->nbr)) <= 0)
     {
       my_putstr("Sur quelle ligne voulez-vous supprimer ?\n");
