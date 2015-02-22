@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Tue Feb 17 23:23:40 2015 bruguet Maxime
-** Last update Tue Feb 17 23:29:51 2015 bruguet Maxime
+** Last update Sun Feb 22 21:10:26 2015 bruguet Maxime
 */
 
 #include <stdlib.h>
@@ -24,6 +24,7 @@ int		check_win_boyard(t_boyard *all)
       else
 	i++;
     }
+  ascii_win();
   printf("Le joueur %d a gagné !\n", nb_player(all->cpt));
   exit(0);
   return (TRUE);
