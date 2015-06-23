@@ -5,3 +5,7 @@ Jeu où il ne faut pas enlever la dernière allumette pour gagner.
 - Mode VS
 - Mode IA (très facile)
 - Mode Fort Boyard
+
+Issue :
+
+- SegF sur /dev/urandom
